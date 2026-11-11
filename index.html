@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanjita Chandan Ballapur — Systems &amp; ML Engineer</title>
+<meta name="description" content="I build systems that make machine learning more efficient. M.S. Computer Science candidate at Columbia; previously at IBM Research and HPE.">
+<meta name="theme-color" content="#070A12">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sanjita Chandan Ballapur — Systems &amp; ML Engineer">
+<meta property="og:description" content="I build systems that make machine learning more efficient. M.S. Computer Science candidate at Columbia; previously at IBM Research and HPE.">
+<meta property="og:image" content="https://sanjita811.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sanjita Chandan Ballapur: I build systems that make machine learning more efficient.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sanjita811.github.io/og-image.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235A8CFF'/%3E%3Cstop offset='1' stop-color='%23B45AFF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #070A12;
+    --glass: rgba(255,255,255,0.055);
+    --glass-strong: rgba(255,255,255,0.09);
+    --border-glass: rgba(255,255,255,0.11);
+    --border-glass-strong: rgba(255,255,255,0.2);
+    --text: #F3F5FB;
+    --text-muted: #A3ACC6;
+    --text-dim: #8790AC;
+    --blue: #5A8CFF;
+    --violet: #B45AFF;
+    --mint: #6AF7C1;
+    --gradient: linear-gradient(120deg, var(--blue) 0%, var(--violet) 100%);
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; scroll-padding-top:90px; }
+
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+    position:relative;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+  }
+
+  h1,h2,h3{ font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.01em; }
+  a{ color:inherit; text-decoration:none; }
+  ::selection{ background:var(--violet); color:#070A12; }
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--mint); outline-offset:3px; border-radius:4px;
+  }
+
+  .grad-text{
+    background:var(--gradient);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 32px; }
+  section{ padding:110px 0; position:relative; }
+
+  /* ---------- AMBIENT MESH BACKGROUND ---------- */
+  .mesh{ position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none; }
+  .mesh span{ position:absolute; border-radius:50%; filter:blur(70px); opacity:0.55; }
+  .mesh .m1{ width:520px; height:520px; top:-160px; left:8%; background:radial-gradient(circle, rgba(90,140,255,0.35), transparent 70%); }
+  .mesh .m2{ width:460px; height:460px; top:420px; right:2%; background:radial-gradient(circle, rgba(180,90,255,0.28), transparent 70%); }
+  .mesh .m3{ width:480px; height:480px; top:1100px; left:-100px; background:radial-gradient(circle, rgba(90,140,255,0.22), transparent 70%); }
+  .mesh .m4{ width:440px; height:440px; top:1900px; right:-60px; background:radial-gradient(circle, rgba(180,90,255,0.24), transparent 70%); }
+  .mesh .m5{ width:480px; height:480px; top:2700px; left:10%; background:radial-gradient(circle, rgba(90,140,255,0.2), transparent 70%); }
+
+  /* ---------- FLOATING PILL NAV ---------- */
+  nav{
+    position:fixed; top:20px; left:50%; transform:translateX(-50%);
+    z-index:100;
+    display:flex; align-items:center; gap:4px;
+    background:var(--glass);
+    backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+    border:1px solid var(--border-glass);
+    border-radius:100px;
+    padding:8px 8px 8px 18px;
+  }
+  .nav-name{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:0.92rem; margin-right:8px; white-space:nowrap; }
+  .nav-links{ display:flex; gap:2px; }
+  .nav-links a{
+    font-size:0.82rem; color:var(--text-muted);
+    padding:8px 14px; border-radius:100px;
+    transition:color 0.2s ease, background 0.2s ease;
+    white-space:nowrap;
+  }
+  .nav-links a:hover{ color:var(--text); background:rgba(255,255,255,0.06); }
+  .nav-cta{
+    background:rgba(255,255,255,0.95); color:#0A0C14;
+    padding:8px 16px; border-radius:100px; font-size:0.82rem; font-weight:600;
+    white-space:nowrap;
+  }
+  .nav-toggle{
+    display:none;
+    background:rgba(255,255,255,0.06); border:1px solid var(--border-glass);
+    color:var(--text); width:36px; height:36px; border-radius:100px;
+    cursor:pointer; align-items:center; justify-content:center;
+  }
+
+  /* ---------- PILLS / BADGES ---------- */
+  .pill{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--glass); backdrop-filter:blur(14px);
+    border:1px solid var(--border-glass);
+    border-radius:100px; padding:7px 16px;
+    font-family:'JetBrains Mono', monospace; font-size:0.72rem;
+    color:var(--text-muted); letter-spacing:0.04em;
+  }
+  .pill .dot{ width:6px; height:6px; border-radius:50%; background:var(--mint); box-shadow:0 0 8px var(--mint); flex-shrink:0; }
+  .status-pill{ margin-bottom:28px; }
+
+  .eyebrow-pill{
+    display:inline-flex; align-items:center;
+    font-family:'JetBrains Mono', monospace; font-size:0.7rem;
+    letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--blue);
+    background:rgba(90,140,255,0.1);
+    border:1px solid rgba(90,140,255,0.25);
+    padding:7px 16px; border-radius:100px;
+    margin-bottom:32px;
+  }
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:13px 26px; border-radius:100px;
+    font-size:0.88rem; font-weight:500;
+    transition:transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  }
+  .btn-primary{ background:rgba(255,255,255,0.95); color:#0A0C14; font-weight:600; }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 14px 34px -10px rgba(255,255,255,0.25); }
+  .btn-ghost{
+    background:var(--glass); backdrop-filter:blur(14px);
+    border:1px solid var(--border-glass); color:var(--text);
+  }
+  .btn-ghost:hover{ border-color:var(--border-glass-strong); background:var(--glass-strong); }
+
+  /* ---------- GLASS CARD ---------- */
+  .glass-card{
+    background:var(--glass);
+    backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+    border:1px solid var(--border-glass);
+    border-radius:22px;
+    box-shadow:0 8px 32px rgba(90,140,255,0.06), inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100svh;
+    display:flex; align-items:center;
+    padding-top:96px; padding-bottom:48px;
+  }
+  .hero-content{ max-width:760px; }
+  .hero h1{
+    font-size:clamp(2.3rem, 6vw, 3.9rem);
+    line-height:1.08;
+    margin-bottom:22px;
+  }
+  .hero h1 .tagline{
+    display:block;
+    font-size:0.46em; line-height:1.25; max-width:20em;
+    margin-top:12px;
+  }
+  .hero p.lede{
+    font-size:1.1rem; color:var(--text-muted);
+    max-width:620px; margin-bottom:14px;
+  }
+  .hero p.lede-sub{ font-size:0.98rem; color:var(--text-dim); margin-bottom:30px; }
+  .role-pills{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:34px; }
+  .role-pills .pill{ font-family:'Inter',sans-serif; font-size:0.82rem; color:var(--text); }
+  .cta-row{ display:flex; flex-wrap:wrap; gap:14px; }
+
+  /* ---------- EXPERIENCE ---------- */
+  .timeline{ position:relative; padding-left:8px; }
+  .timeline::before{
+    content:"";
+    position:absolute; left:5px; top:10px; bottom:10px; width:2px;
+    background:linear-gradient(to bottom, var(--blue), var(--violet), transparent);
+    border-radius:2px;
+  }
+  .job{ position:relative; padding-left:38px; margin-bottom:46px; }
+  .job:last-child{ margin-bottom:0; }
+  .job::before{
+    content:""; position:absolute; left:-2px; top:6px;
+    width:14px; height:14px; border-radius:50%;
+    background:var(--bg);
+    border:2px solid var(--blue);
+    box-shadow:0 0 12px rgba(90,140,255,0.6);
+  }
+  .job-head{ display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:4px 12px; margin-bottom:8px; }
+  .job-title{ font-size:1.18rem; font-weight:600; }
+  .job-company{ color:var(--blue); font-weight:500; }
+  .job-meta{ font-family:'JetBrains Mono', monospace; font-size:0.74rem; color:var(--text-dim); }
+  .job ul{ margin-top:12px; padding-left:20px; }
+  .job li{ color:var(--text-muted); margin-bottom:9px; font-size:0.95rem; }
+  .job li::marker{ color:var(--violet); }
+
+  /* ---------- PROJECTS ---------- */
+  .project-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap:18px; }
+  .project-card{ padding:26px; display:flex; flex-direction:column; transition:transform 0.25s ease, border-color 0.25s ease; }
+  .project-card:hover{ transform:translateY(-4px); border-color:var(--border-glass-strong); }
+  .project-card .tag{
+    font-family:'JetBrains Mono', monospace; font-size:0.65rem; color:var(--mint);
+    letter-spacing:0.08em; margin-bottom:12px; display:block;
+  }
+  .project-card h3{ font-size:1.04rem; margin-bottom:10px; }
+  .project-card p{ color:var(--text-muted); font-size:0.9rem; }
+  .project-link{
+    display:inline-flex; align-items:center; gap:6px;
+    margin-top:auto; align-self:flex-start;
+    font-family:'JetBrains Mono', monospace; font-size:0.74rem;
+    color:var(--blue);
+    padding:6px 14px; border-radius:100px;
+    background:rgba(90,140,255,0.1);
+    border:1px solid rgba(90,140,255,0.25);
+    transition:background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+  .project-card p + .project-link{ margin-top:auto; }
+  .project-card p{ margin-bottom:18px; }
+  .project-link:hover{ background:rgba(90,140,255,0.2); border-color:rgba(90,140,255,0.5); color:var(--text); }
+
+  /* ---------- SKILLS ---------- */
+  .skills-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(min(230px, 100%), 1fr)); gap:18px; }
+  .skill-group{ padding:24px; }
+  .skill-group h3{
+    font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em;
+    color:var(--text-dim); margin-bottom:16px; font-family:'JetBrains Mono', monospace; font-weight:500;
+  }
+  .skill-chips{ display:flex; flex-wrap:wrap; gap:8px; }
+  .skill-chips span{
+    font-size:0.8rem; padding:7px 14px; border-radius:100px;
+    background:rgba(255,255,255,0.05); border:1px solid var(--border-glass); color:var(--text);
+  }
+
+  /* ---------- EDUCATION ---------- */
+  .edu-card{ padding:28px; margin-bottom:16px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  .edu-card:last-child{ margin-bottom:0; }
+  .edu-card h3{ font-size:1.08rem; margin-bottom:4px; }
+  .edu-card .school-meta{ color:var(--text-muted); font-size:0.92rem; }
+  .edu-gpa{ font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:1rem; color:var(--mint); text-align:right; white-space:nowrap; }
+  .edu-gpa small{ display:block; color:var(--text-dim); font-weight:400; font-size:0.85rem; font-family:'Inter', sans-serif; }
+  .edu-courses{ color:var(--text-dim); font-size:0.82rem; margin-top:10px; }
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  .contact-section{ text-align:center; }
+  .contact-card{ padding:64px 40px; max-width:720px; margin:0 auto; }
+  .contact-section h2{ font-size:clamp(1.9rem, 4vw, 2.7rem); margin-bottom:18px; }
+  .contact-section p{ color:var(--text-muted); margin-bottom:36px; max-width:460px; margin-left:auto; margin-right:auto; }
+  .contact-links{ display:flex; justify-content:center; flex-wrap:wrap; gap:14px; }
+  footer{ padding:32px 0 48px; text-align:center; color:var(--text-dim); font-size:0.78rem; font-family:'JetBrains Mono', monospace; }
+
+  /* ---------- TABLET / PHONE ---------- */
+  @media (max-width:820px){
+    nav{ left:16px; right:16px; transform:none; top:14px; gap:6px; padding:8px 8px 8px 18px; }
+    .nav-name{ margin-right:auto; }
+    .nav-toggle{ display:inline-flex; }
+    .nav-links{
+      display:none; position:absolute; top:calc(100% + 10px); left:0; right:0;
+      flex-direction:column; gap:2px; padding:10px;
+      background:rgba(12,16,30,0.97);
+      border:1px solid var(--border-glass); border-radius:22px;
+    }
+    .nav-links.open{ display:flex; }
+    .nav-links a{ padding:13px 16px; font-size:0.95rem; }
+  }
+
+  @media (max-width:640px){
+    .wrap{ padding:0 22px; }
+    section{ padding:68px 0; }
+    .hero{ padding-top:92px; }
+    .hero p.lede{ font-size:1.02rem; }
+    .job{ padding-left:30px; margin-bottom:38px; }
+    .job-title{ font-size:1.08rem; }
+    .project-card, .skill-group, .edu-card{ padding:22px; }
+    .edu-gpa{ text-align:left; white-space:normal; }
+    .contact-card{ padding:44px 22px; }
+    .cta-row .btn, .contact-links .btn{ flex:1 1 calc(50% - 7px); padding:13px 16px; }
+    .cta-row .btn-primary, .contact-links .btn-primary{ flex-basis:100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="mesh" aria-hidden="true">
+  <span class="m1"></span><span class="m2"></span><span class="m3"></span><span class="m4"></span><span class="m5"></span>
+</div>
+
+<nav aria-label="Primary">
+  <a class="nav-name" href="#top">Sanjita</a>
+  <div class="nav-links" id="nav-links">
+    <a href="#experience">Work</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+  </div>
+  <a class="nav-cta" href="#contact">Contact</a>
+  <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5h12M2 8h12M2 11.5h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+  </button>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="wrap hero-content">
+    <div class="pill status-pill"><span class="dot"></span>OPEN TO FULL-TIME ROLES</div>
+    <h1>Sanjita Chandan Ballapur<span class="tagline grad-text">I build systems that make machine learning more efficient.</span></h1>
+    <p class="lede">My work spans accelerator kernels, distributed data infrastructure, and LLM inference optimization. At IBM Research, I implemented a Mamba-2 kernel for the Spyre AI accelerator; at HPE, I redesigned Spark/Kafka pipelines to reduce compute and storage costs. I’m interested in how algorithms, hardware, and systems design come together to shape ML performance.</p>
+    <p class="lede lede-sub">I’m pursuing an M.S. in Computer Science at Columbia University, graduating December 2026.</p>
+    <div class="role-pills">
+      <span class="pill">Software Engineer</span>
+      <span class="pill">ML Engineer</span>
+      <span class="pill">Data Engineer</span>
+      <span class="pill">AI Engineer</span>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:sb5216@columbia.edu">Get in touch</a>
+      <a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/sanjitacballapur" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/sanjita811" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience">
+  <div class="wrap">
+    <div class="eyebrow-pill">Work log</div>
+    <div class="timeline">
+
+      <div class="job">
+        <div class="job-head">
+          <div><span class="job-title">AI Systems Engineer Intern</span> · <span class="job-company">IBM Research</span></div>
+          <div class="job-meta">MAY 2026 – AUG 2026 · YORKTOWN HEIGHTS, NY</div>
+        </div>
+        <ul>
+          <li>Implemented the Mamba-2 State Space Duality (SSD) kernel for IBM’s Spyre AI accelerator in the open-source torch-spyre PyTorch backend, laying the foundation for efficient long-context models (Codestral, Granite 4, Nemotron); validated against a CPU version with 0.4% relative L2 error in FP16.</li>
+          <li>Redesigned sequential math as matrix multiplications split across parallel cores, removing CPU fallbacks and staying within per-core memory limits.</li>
+          <li>Profiled the kernel through the compiler stack, found it was memory-bound, and removed duplicated tensor re-layouts to cut 11% of device time.</li>
+          <li>Built a three-tier validation harness that isolates failures to the algorithm, the numerics, or the compiler, verifying each optimization on hardware.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div><span class="job-title">Teaching Assistant</span> · <span class="job-company">Columbia University</span></div>
+          <div class="job-meta">AUG 2026 – DEC 2026 · NEW YORK, NY</div>
+        </div>
+        <ul>
+          <li>Support Scaling LLMs: Systems, Optimization, and Emerging Paradigms, a graduate seminar on scaling laws, Mamba and MoE, inference optimization (vLLM, quantization, speculative decoding), reasoning and alignment (DPO, DeepSeek-R1), agentic and multimodal LLMs, and accelerator hardware.</li>
+          <li>Grade paper presentations and write quizzes and hands-on notebooks that test and reinforce students’ understanding of frontier research.</li>
+          <li>Hold office hours and coach students on presentation skills, clearing up doubts and strengthening their grasp of core concepts.</li>
+          <li>Advise groups on project proposals and guide and grade their semester-long survey papers with experimental evaluation.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div><span class="job-title">College Intern &amp; Data Engineer</span> · <span class="job-company">Hewlett Packard Enterprise</span></div>
+          <div class="job-meta">FEB 2024 – JUN 2025 · BANGALORE, IN</div>
+        </div>
+        <ul>
+          <li>Integrated protobuf support into Spark/Kafka pipelines for faster serialization and deserialization of structured messages, cutting compute costs by 20% by eliminating Avro conversion overhead.</li>
+          <li>Led the end-to-end migration of applications from cloud to on-premises clusters to meet security requirements, re-architecting data pipelines and refactoring the codebase to run across environments.</li>
+          <li>Designed a storage strategy for compacted Kafka topics using Delta Lake instead of Parquet, reducing latency and cutting storage costs by 50%.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div><span class="job-title">Teaching Assistant</span> · <span class="job-company">PES University</span></div>
+          <div class="job-meta">AUG 2023 – DEC 2023 · BANGALORE, IN</div>
+        </div>
+        <ul>
+          <li>Created assignments and lab experiments for Python for Computational Problem Solving, giving 1,500+ first-year students hands-on coding practice.</li>
+          <li>Ran mentoring sessions to clear doubts and help students choose projects, and trained newly appointed TAs to manage lab sessions.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div><span class="job-title">Machine Learning Intern</span> · <span class="job-company">Troogue.ai</span></div>
+          <div class="job-meta">JUN 2023 – SEP 2023 · BANGALORE, IN</div>
+        </div>
+        <ul>
+          <li>Built an ML/NLP resume-analysis system, training BERT, Logistic Regression, and Random Forest models on datasets I developed to extract and rank technical and soft skills, improving candidate-job matching accuracy by 30%.</li>
+          <li>Productionized the models as scalable microservice API endpoints, working with cross-functional teams to integrate them into the broader application.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects">
+  <div class="wrap">
+    <div class="eyebrow-pill">Selected projects</div>
+    <div class="project-grid">
+
+      <div class="glass-card project-card">
+        <span class="tag">QUANTIZATION · INFERENCE</span>
+        <h3>Uncertainty-Aware Inference for Quantized LLMs</h3>
+        <p>Collaboration with IBM Research. Benchmarked Mistral-7B under GPTQ, AWQ, and NF4 quantization, profiling GPU kernels with Nsight Compute and roofline analysis. Showed kernel choice, not bit-width, drives speed: GPTQ INT4 (Marlin) reached 1.78× FP16 throughput in vLLM, while AWQ INT4 at the same precision ran 4.5× slower. Quantization also cut average calibration error (0.229 → 0.067) but raised worst-case error (0.33 → 0.94) on a medical QA benchmark.</p>
+        <a class="project-link" href="https://github.com/sanjita811/uncertainty-aware-inference" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+
+      <div class="glass-card project-card">
+        <span class="tag">MULTI-AGENT · RAG</span>
+        <h3>Multi-Agent RAG System for Canine Care</h3>
+        <p>Multi-agent assistant that answers dog owners’ health, nutrition, and training questions with cited guidance. A router delegates to domain-specialized agents retrieving from PubMed, AAFCO, and ASPCA via FAISS-based RAG, backed by a four-level safety triage classifier and personalization by breed, age, and allergies.</p>
+        <a class="project-link" href="https://github.com/sanjita811/PawAI" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+
+      <div class="glass-card project-card">
+        <span class="tag">REAL-TIME ML · XGBOOST</span>
+        <h3>Real-Time De-escalation Engine for Conversational LLMs</h3>
+        <p>Closed-loop system that detects rising user frustration and adapts an LLM chatbot’s tone before it escalates. GoEmotions BERT with VAD projection feeds a rolling-window XGBoost model that predicts escalation two turns ahead (AUC 0.79 on 50K conversations); SHAP drivers become directives for a quantized Mistral-7B, and a paired A/B test showed a significant +0.27 valence shift (p &lt; 0.05).</p>
+        <a class="project-link" href="https://github.com/sanjita811/ExpressionAI" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+
+      <div class="glass-card project-card">
+        <span class="tag">LOW-RESOURCE NLP</span>
+        <h3>Low-Resource MT: Ancient Egyptian → German</h3>
+        <p>Fine-tuned LLaMA-3.1-8B-Instruct with LoRA for Ancient Egyptian-to-German translation, reaching 45.62 BLEU and 61.62 chrF with minimum Bayes risk decoding. Extended the tokenizer with Egyptian transliteration tokens learned via byte pair encoding, and ran ablations across model scale, tokenization, input representation, and decoding against an M2M-100 baseline.</p>
+        <a class="project-link" href="https://github.com/sanjita811/ancient-egyptian-to-german" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+
+      <div class="glass-card project-card">
+        <span class="tag">3D VISION · GAUSSIAN SPLATTING</span>
+        <h3>Training-Free Segmentation of 3D Gaussian Splatting Scenes</h3>
+        <p>Training-free pipeline that segments objects in a pretrained 3D Gaussian Splatting scene from a text prompt alone. GroundingDINO and SAM2 masks from 8 orbital views are lifted onto individual Gaussians by opacity weighting, enabling 3D-consistent recoloring, removal, and natural-language edits (e.g., “change the flowers to green”) on Mip-NeRF 360 scenes without retraining.</p>
+        <a class="project-link" href="https://github.com/sanjita811/3d-gaussian-splat-segmentation" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+
+      <div class="glass-card project-card">
+        <span class="tag">COMPUTER VISION · MULTIMODAL FUSION</span>
+        <h3>Hybrid SIFT + ResNet50 Fusion for Yoga Pose Recognition</h3>
+        <p>Co-authored research fusing MediaPipe-guided SIFT and edge descriptors with ResNet50 features through a learned feature-wise gate and late fusion. On the 30-class YFA-30 dataset it reached 93% accuracy, beating ResNet50, VGG19, InceptionV3, and MobileNetV2 baselines, with the biggest gains on poses that differ only in subtle limb orientation.</p>
+      </div>
+
+      <div class="glass-card project-card">
+        <span class="tag">MULTIMODAL · ROBOTICS</span>
+        <h3>Multimodal Human-Robot Interaction System</h3>
+        <p>Real-time robot navigation from hand gestures and speech, simulated in OpenAI Gym. A MediaPipe and CNN-transformer model reached 92% gesture-recognition accuracy, Whisper handles speech, and LLaMA 2 was evaluated against a keyword-based approach for mapping transcripts to navigation commands.</p>
+        <a class="project-link" href="https://github.com/sanjita811/Gesture-and-Speech-Recognition" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills">
+  <div class="wrap">
+    <div class="eyebrow-pill">Stack</div>
+    <div class="skills-grid">
+      <div class="glass-card skill-group">
+        <h3>Languages</h3>
+        <div class="skill-chips">
+          <span>Python</span><span>Java</span><span>Scala</span><span>C</span><span>C++</span><span>SQL</span><span>HTML</span><span>JavaScript</span>
+        </div>
+      </div>
+      <div class="glass-card skill-group">
+        <h3>ML / AI</h3>
+        <div class="skill-chips">
+          <span>PyTorch</span><span>Hugging Face Transformers</span><span>TensorFlow</span><span>Scikit-learn</span><span>XGBoost</span><span>Keras</span><span>NumPy</span><span>Pandas</span><span>NLTK</span>
+        </div>
+      </div>
+      <div class="glass-card skill-group">
+        <h3>LLM Systems</h3>
+        <div class="skill-chips">
+          <span>vLLM</span><span>Quantization (GPTQ, AWQ, NF4)</span><span>LoRA</span><span>RAG &amp; FAISS</span><span>Nsight Compute</span><span>Roofline analysis</span>
+        </div>
+      </div>
+      <div class="glass-card skill-group">
+        <h3>Data &amp; Distributed Systems</h3>
+        <div class="skill-chips">
+          <span>Spark</span><span>Kafka</span><span>Hadoop</span><span>Airflow</span><span>Delta Lake</span>
+        </div>
+      </div>
+      <div class="glass-card skill-group">
+        <h3>Systems &amp; Cloud</h3>
+        <div class="skill-chips">
+          <span>Docker</span><span>Kubernetes</span><span>Git</span><span>AWS</span><span>GCP</span>
+        </div>
+      </div>
+      <div class="glass-card skill-group">
+        <h3>AI-Assisted Development</h3>
+        <div class="skill-chips">
+          <span>Claude Code</span><span>GitHub Copilot</span><span>Codex</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section id="education">
+  <div class="wrap">
+    <div class="eyebrow-pill">Education</div>
+
+    <div class="glass-card edu-card">
+      <div>
+        <h3>Columbia University, Columbia Engineering</h3>
+        <div class="school-meta">M.S. in Computer Science, Machine Learning Track · New York, NY</div>
+        <div class="edu-courses">High Performance Machine Learning · Agentic Systems · Algorithms · Distributed Systems · Natural Language Processing</div>
+      </div>
+      <div class="edu-gpa">GPA 3.48/4.0<small>Expected Dec 2026</small></div>
+    </div>
+
+    <div class="glass-card edu-card">
+      <div>
+        <h3>PES University</h3>
+        <div class="school-meta">B.Tech in Computer Science and Engineering · Bangalore, IN</div>
+        <div class="edu-courses">Python · Data Structures &amp; Algorithms · Artificial Intelligence · Cloud · Operating Systems · C · C++ · Java · Databases</div>
+      </div>
+      <div class="edu-gpa">GPA 9.69/10.0<small>May 2024</small></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="contact-section">
+  <div class="wrap">
+    <div class="glass-card contact-card">
+      <div class="eyebrow-pill">Contact</div>
+      <h2>Let’s build something <span class="grad-text">fast and reliable</span>.</h2>
+      <p>Open to full-time Software Engineering, ML Engineering, Data Engineering, and AI Engineering roles. Reach out any time.</p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:sb5216@columbia.edu">sb5216@columbia.edu</a>
+        <a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/sanjitacballapur" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/sanjita811" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Sanjita Chandan Ballapur</div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  (function(){
+    var toggle = document.getElementById('nav-toggle');
+    var links = document.getElementById('nav-links');
+    if(!toggle || !links) return;
+
+    function setOpen(open){
+      links.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+
+    toggle.addEventListener('click', function(){ setOpen(!links.classList.contains('open')); });
+    links.addEventListener('click', function(e){ if(e.target.tagName === 'A') setOpen(false); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') setOpen(false); });
+    document.addEventListener('click', function(e){
+      if(!links.classList.contains('open')) return;
+      if(!links.contains(e.target) && !toggle.contains(e.target)) setOpen(false);
+    });
+  })();
+</script>
+
+</body>
+</html>
